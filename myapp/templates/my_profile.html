@@ -1,0 +1,47 @@
+{% extends 'header&footer.html' %}
+{% load static %}
+
+{% block content %}
+    <center>
+        <br><br>
+        <br><br>
+        <br><br>
+
+    <h1>My Profile</h1>
+    
+    <div class="col-lg-8 form-inner-cont">
+        <form action="/my_profile/" method="post" class="signin-form">
+            {% csrf_token %}
+            {{msg}}
+            <!-- Cross Site Request Forgery -->
+            <div class="form-grids">
+                <div class="form-input">
+                    <input type="text" name="fname" value="{{userdata.first_name}}" id="w3lName" placeholder="First Name"
+                        required="" />
+                </div>
+                <div class="form-input">
+                    <input type="text" name="lname" id="w3lSubject" value="{{userdata.last_name}}" placeholder="Last Name"
+                        required />
+                </div>
+                <div class="form-input">
+                    <input type="text" name="username" id="w3lSubject" value="{{userdata.username}}" placeholder="Username"
+                        required />
+                </div>
+                <div class="form-input">
+                    <input type="email" name="email" id="w3lSender" value="{{userdata.email}}" placeholder="Email"
+                        required  disabled/>
+                </div>
+                
+               
+            </div>
+           <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-style btn-primary">Save Profile</button>
+            </div>
+        </form>
+        
+    </div>
+    <br><br>
+        <br><br>
+</center>
+{% endblock %}

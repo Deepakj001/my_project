@@ -1,0 +1,62 @@
+{% extends 'header&footer.html' %}
+{% load static %}
+{% block content%}
+
+    <!--//Header-->
+    <!--/inner-page-->
+    
+    <!--//inner-page-->
+    <!--/w3l-servicesblock-->
+  
+    <!--//w3l-servicesblock-->
+    <!-- /content-4-->
+
+    
+    <!-- /home-page-video-popup-->
+    <section class="w3l-index5 py-5" id="about">
+        <div class="new-block py-md-5 py-3">
+            <div class="container">
+
+                <div class="row middle-section align-self">
+                    <div class="col-lg-6 video-info pe-lg-5">
+                        <div class="title-content text-left">
+                            <h6 class="title-subw3hny">Welcome To My Blogs !!</h6>
+                           
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //home-page-video-popup-->
+    <!-- card section -->
+    <section class="w3l-features-4">
+        <div class="features4-block py-5">
+            <div class="container py-md-5">
+                <div class="we-header text-center">
+                    <h6 class="title-subw3hny">Blogs!!</h6>
+
+                </div>
+                <br>
+                <div class="row features4-grids">
+                    {% for i in blogs %}
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="features4-grid active">
+                            <div class="feature-images">
+                                <span class="fas fa-carrot"></span>
+                            </div>
+                            <img src="{{i.pic.url}}" alt=" " class="img-fluid"> 
+                            <h5><a href="/single_blog/{{i.id}}">{{i.categories}}</a></h5>
+                            <a href="/single_blog/{{i.id}}" class="grid-link">{{i.name}} <span class="fa fa-arrow-right"></span></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+    
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //card section -->
+    <!--/footer-->
+{% endblock%}

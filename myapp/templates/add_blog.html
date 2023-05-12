@@ -1,0 +1,98 @@
+{% extends 'header&footer.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Agrowfarm - Agriculture Category Bootstrap Responsive Template | Contact :: W3layouts </title>
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+</head>
+<body>
+    <center>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h1>Blog <span class="fa fa-heart"></span></ h1>
+    <div class="address-grid col-lg-4 col-md-6 col-sm-7 ps-lg-5 mt-lg-0 mt-sm-5 mt-4 w3l-footer-16-main">
+        <h5></h5>
+        <form action="/add_blog/" class="subscribe d-flex mt-4 pt-lg-2 mb-4" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{msg}}
+
+            <div class="form-top">
+                <div class="form-top-righ">
+                    <textarea name="Message" id="discription" placeholder="Write Here*" required=""></textarea>
+                </div>
+            
+                <div class="form-top-righ">
+                    <input type="text" name="Name" id="name" placeholder="Enter_name" required="">
+                
+                </div>
+                <div class="form-top-righ">
+                    <input type="file" name="Photo" id="photo" placeholder="photo" required="">
+                
+                </div>
+                <br>
+               
+        
+            
+               
+                <div class="align-items-left">
+                    <select name="cate" id="Category">
+                    <option value="Fresh Vegetables">Fresh Vegetables</option>
+                    <option value="Farm Products">Farm Products</option>
+                    <option value="Fresh Fruits">Fresh Fruits</option>
+                    <option value="Organic Products">Organic Products</option>
+                    <option value="Organic Solution">Organic Solution</option>
+                    
+
+                    </select>
+                </div>
+
+                <div class="text-center mt-5">
+                    <button type="submit" class="btn btn-style btn-primary">Submit<i class="far fa-paper-plane ml-lg-3"></i></button>
+                </div>
+
+            </div>
+  <!-- //contact-form -->
+    <!-- contact map -->
+    <section class="w3l-contact-main" id="contact">
+        <div class="container">
+            <!-- <div class="map pt-lg-3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059445135!2d-74.25986613799748!3d40.69714941774136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e3!4m0!4m0!5e0!3m2!1sen!2sin!4v1570181661801!5m2!1sen!2sin" allowfullscreen=""></iframe>
+            </div> -->
+        </div>
+    </section>
+    <!-- //contact map -->
+
+    <!--/contact-->
+
+         </div>
+                    
+                    <div class="single-contact-infos">
+                        <div class="icon-box"> <span class="fas fa-blender-phone"></span></div>
+                            
+                        </div>
+                    </div>
+                
+            
+        </div>
+    </section>
+    <!--//contact-->
+    <!--/footer-->
+   
+</center>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'header&footer.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+
+<section class="w3l-banner-agency py-s" id="work">
+    <div class="midd-w3 py-md-4">
+        <div class="container">
+            <span class="label-blue mb-sm-4 mb-3">$ {{donations}}</span>
+            <center>
+            <li class="service-link"><a href="/donate/{{blog.id}}"><span class="fa fa-heart pull-right"></span> Donate Now!!</a></li>
+            <br>
+            </center>
+            
+            
+
+
+
+            <div class="about-img-top mb-lg-0 mb-4">
+                
+                
+                
+                <img src="{{blog.pic.url}}" alt="" class="img-fluid radius-image">
+            </div>
+            <div class="row">
+                <div class="col-lg-100 banner-content align-self">
+                    <h6 class="title-subw3hny">{{blog.categories}}</h6>
+                    <h3 class="title-w3l">{{blog.name}}<br></h3>
+                    <div class="w3banner-content-btns">
+                        
+                </div>
+                <div class="col-lg-12 text-left ps-lg-10 mt-lg-0 mt-md-11 mt-112">
+                    <p>
+                        {{blog.discription}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+
+                     <div class="container py-lg-5 py-md-4">
+                        <div class="w3l-subscribe-content text-center bg-clr-white py-md-5 py-2">
+                            <div class="py-5">
+                                <h3 class="section-title-left mb-2">Comment Section</h3>
+                                <form action="/add_comment/{{blog.id}}" method="POST" class="subscribe">
+                                    {% csrf_token %}
+                                    <textarea class="col-lg-8" name="troll"  placeholder="Enter Your Comments Here.." ></textarea>
+                                    <br>
+                                    <button class="btn btn-style btn-primary">Comment</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    
+
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- comment section started -->
+<div class="row container " >
+    <div class="col-lg-1" ></div> 
+    <div class="col-lg-10 col-md-10 item">
+        {% for i in all_comments %}
+        <div class="card">
+            
+            <div class="card-body blog-details">
+                <a href="#blog-single.html" class="blog-desc">{{i.message}}
+                </a>
+                <div class="author align-items-center">
+                    <ul class="blog-meta">
+                        <li>
+                            <a href="author.html">{{i.user.first_name}}</a> </a>
+                        </li>
+                        <li class="meta-item blog-lesson">
+                            <span class="meta-value">{{i.time}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-lg-1" ></div> 
+</div>
+</section>
+<br>
+ 
+                
+            
+        
+    <!-- /grids -->
+    
+    <!-- //grids -->
+</section>  
+                
+                    
+            
+
+{% endblock %}

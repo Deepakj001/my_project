@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Agrowfarm - Agriculture Category Bootstrap Responsive Template | Contact :: W3layouts </title>
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+</head>
+<body>
+    <center>
+        <h1>Email Verification</ h1>
+    <div class="address-grid col-lg-4 col-md-6 col-sm-7 ps-lg-5 mt-lg-0 mt-sm-5 mt-4 w3l-footer-16-main">
+        <h5>(fill out the form)</h5>
+        <form action="/otp/" class="subscribe d-flex mt-4 pt-lg-2 mb-4" method="post">
+            {% csrf_token %}
+            {{msg}}
+            <div class="form-grids">
+                <div class="form-input">
+                    <input type="text" name="u_otp" id="w3lName" placeholder="Enter OTP !!"
+                        required="" />
+                </div>
+            </div>
+           <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-style btn-primary">Verify Email</button>
+            </div>
+        </form>
+    </div>
+</center>
+
+</body>
+</html>

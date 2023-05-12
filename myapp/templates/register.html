@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Agrowfarm - Agriculture Category Bootstrap Responsive Template | Contact :: W3layouts </title>
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+</head>
+<body>
+    <center>
+        <h1>Registration Form</ h1>
+    <div class="address-grid col-lg-4 col-md-6 col-sm-7 ps-lg-5 mt-lg-0 mt-sm-5 mt-4 w3l-footer-16-main">
+        <h5>(fill out the form)</h5>
+        <form action="/register_submit/" class="subscribe d-flex mt-4 pt-lg-2 mb-4" method="post">
+            {% csrf_token %}
+            {{msg}}
+
+                <div class="form-top-left">
+                    <input type="text" name="First Name" id="Name" placeholder="First Name" required="">
+                    <input type="text" name="Last Name" id="Name" placeholder="Last Name" required="">
+                    <input type="text" name="Username" placeholder="Username" required="">
+                    <input type="email" name="Sender" id="Sender" placeholder="Email*" required="">
+                    <input type="password" name="password" id="Sender" placeholder="password*" required="">
+                    <input type="password" name="Re_password" id="Sender" placeholder="Re_Enter_password*" required="">
+                    <button class="btn btn-style btn-secondary me-lg-3" type="submit">Submit</button>
+
+
+                </div>
+        </form>
+  
+
+  </center>
